@@ -11,6 +11,13 @@ export function proxy(request: NextRequest) {
   const isPublicPath = publicPaths.some((path) => pathname.startsWith(path));
 
   if (pathname === "/") {
+    const isAuthenticated = accessToken || refreshToken;
+    return NextResponse.redirect(
+      new URL(isAuthenticated ? "/timer" : "/login", request.url),
+    );
+  }
+
+  if (isPublicPath && (accessToken || refreshToken)) {
     return NextResponse.redirect(new URL("/timer", request.url));
   }
 
@@ -18,11 +25,7 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  if (!accessToken && !refreshToken) {
-    return NextResponse.redirect(new URL("/login", request.url));
-  }
-
-  return NextResponse.redirect(new URL("/timer", request.url));
+  return NextResponse.redirect(new URL("/login", request.url));
 }
 
 export const config = {
