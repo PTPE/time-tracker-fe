@@ -28,8 +28,11 @@ export default function Navigator() {
   const currentPath = usePathname();
 
   return (
-    <div className="bg-surface-primary sticky top-0 z-50 flex items-center justify-between px-6 py-4 shadow-sm">
-      <Link className="flex shrink-0 items-center gap-2" href="/projects">
+    <div className="bg-surface-primary fixed h-fit bottom-0 md:top-0 w-full z-50 flex items-center justify-between px-6 py-4 shadow-sm">
+      <Link
+        className="md:flex hidden shrink-0 items-center gap-2"
+        href="/projects"
+      >
         <div className="bg-teal flex h-10 w-10 items-center justify-center rounded-lg">
           <LogoIcon className="h-6 w-6 text-white" />
         </div>
@@ -39,7 +42,7 @@ export default function Navigator() {
           Tracker
         </span>
       </Link>
-      <div className="flex gap-2">
+      <div className="flex gap-2 md:w-fit w-full justify-between">
         {routeConfig.map((route) => (
           <Link
             href={route.path}
