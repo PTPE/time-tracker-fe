@@ -10,7 +10,7 @@ export function proxy(request: NextRequest) {
 
   const isPublicPath = publicPaths.some((path) => pathname.startsWith(path));
 
-  if ((accessToken || refreshToken) && pathname === "/") {
+  if (pathname === "/") {
     return NextResponse.redirect(new URL("/timer", request.url));
   }
 
