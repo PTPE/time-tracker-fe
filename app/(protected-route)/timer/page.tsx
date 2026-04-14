@@ -1,3 +1,3 @@
-export default function TimerPage(){
-    return <div>Timer</div>
+export default function TimerPage() {
+  return <div>Timer</div>;
 }
