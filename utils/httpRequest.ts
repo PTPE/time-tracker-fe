@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 
 type Props = {
-  path: string;
+  url: string;
   method?: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
   config?: AxiosRequestConfig;
 };
@@ -26,13 +26,13 @@ instance.interceptors.response.use(
 );
 
 export default async function httpRequest<T>({
-  path,
+  url,
   method = "GET",
   config,
 }: Props): Promise<T> {
   try {
     const response = await instance({
-      url: path,
+      url,
       method,
       ...config,
     });

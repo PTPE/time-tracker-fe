@@ -1,0 +1,15 @@
+<svg
+xmlns="http://www.w3.org/2000/svg"
+width="24"
+height="24"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+className="lucide lucide-play h-6 w-6"
+data-fg-c4ug25="2.12:158.1245:/src/app/components/Timer.tsx:212:15:7565:28:e:Play::::::IIc"
+>
+<polygon points="6 3 20 12 6 21 6 3"></polygon>
+</svg>
