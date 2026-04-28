@@ -59,6 +59,7 @@ export default function ConfirmCompleteModal({
       completedLength: data.completedLength,
       notes: data.notes || "",
     });
+    ref?.current?.onClose();
   };
 
   useEffect(
